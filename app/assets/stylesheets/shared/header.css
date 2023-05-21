@@ -1,0 +1,21 @@
+
+
+.sidebar {
+  top: 0;
+  left: 0;
+  height: 100%;
+}
+
+.navbar{
+  height: 60px;
+}
+
+.login-btn{
+  margin-right: 30px;
+}
+.sign-btn{
+  margin-right: 10px;
+}
+.navbar-nav {
+  margin-left: 60%;
+}

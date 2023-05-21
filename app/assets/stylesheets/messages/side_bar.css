@@ -1,0 +1,14 @@
+
+.contact-btn {
+  margin-top: 20px;
+  overflow: scroll;
+  width: 20vw;
+}
+.rooms {
+  overflow: scroll;
+}
+.room{
+  margin: 0 auto;
+  height: 100vh;
+  overflow: scroll;
+}

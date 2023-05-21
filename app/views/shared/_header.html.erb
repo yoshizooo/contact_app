@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3 shadow-sm sticky-top">
+  <div class="container-fluid">
+    <div class="dropdown">
+      <!-- 切替ボタンの設定 -->
+      <button type="button" class="btn btn-outline-bark dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-list fs-3 me-1 h-1"></i>
+      </button>
+      <!-- ドロップメニューの設定 -->
+      <ul class="dropdown-menu">
+      <ul class="list-group list-group-flush" style="width: 100%;">
+          <%= link_to "ホーム","#", class:"list-group-item "%>
+          <%= link_to "連絡する","#", class:"list-group-item "%>
+          <%# adminのみ表示 %>
+          <%= link_to "お知らせ投稿","#", class:"list-group-item "%>
+          <%= link_to "ルームの作成","#", class:"list-group-item "%>
+          <%#//adminのみ表示 %>
+        </ul>
+      </ul>
+    </div>
+    <div class="navbar-brand mb-0 ms-2 h1 fs-3 ">
+      池田保育園
+    </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <div class="login-btn">
+          <%= link_to "ログアウト","#" ,class:"text-decoration-none text-reset fs-6" %>
+        </div>
+        <div class="login-btn">
+          <%= link_to "ログイン","#" ,class: "text-decoration-none text-reset fs-6" %>
+        </div>
+        <div class="sign-btn">
+        <%= link_to "新規登録","#" ,class: "text-decoration-none text-reset fs-6" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
