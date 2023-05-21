@@ -26,15 +26,21 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <div class="login-btn">
-          <%= link_to "ログアウト","#" ,class:"text-decoration-none text-reset fs-6" %>
-        </div>
-        <div class="login-btn">
-          <%= link_to "ログイン","#" ,class: "text-decoration-none text-reset fs-6" %>
-        </div>
-        <div class="sign-btn">
-        <%= link_to "新規登録","#" ,class: "text-decoration-none text-reset fs-6" %>
-        </div>
+        <% if user_signed_in? %>
+          <div class="login-name me-5">
+            <%= current_user.children_name %>
+          </div>
+          <div class="logout-btn ">
+            <%= link_to "ログアウト",destroy_user_session_path, method: :delete ,class:"text-decoration-none text-reset " %>
+          </div>
+        <% else %>
+          <div class="login-btn ms-5">
+            <%= link_to "ログイン",new_user_session_path ,class: "text-decoration-none text-reset " %>
+          </div>
+          <div class="sign-btn ms-4">
+            <%= link_to "新規登録",new_user_registration_path ,class: "text-decoration-none text-reset " %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>

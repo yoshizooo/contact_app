@@ -11,11 +11,22 @@
 }
 
 .login-btn{
-  margin-right: 30px;
+
+  font-size: 20px;
+  font-weight: 200px;
 }
 .sign-btn{
-  margin-right: 10px;
+  font-size: 20px;
+  font-weight: 200px;
 }
 .navbar-nav {
   margin-left: 60%;
+}
+.login-name{
+  font-size: 20px;
+  font-weight: 200px;
+}
+.logout-btn{
+  font-size: 20px;
+  font-weight: 200px;
 }
