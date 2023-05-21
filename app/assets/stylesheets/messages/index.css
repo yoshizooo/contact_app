@@ -1,0 +1,15 @@
+a {
+  text-decoration: none;
+}
+
+.wrapper {
+  display: flex;
+}
+.side-bar{
+  width: 20vw;
+  height: 100vh;
+}
+.main-chat {
+  width: calc(100vw - 20vw);
+  height: 100vh;
+}
