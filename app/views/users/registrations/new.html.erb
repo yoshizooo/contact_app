@@ -1,0 +1,65 @@
+<div class='account-page' id='account-page'>
+  <div class='account-page__inner clearfix'>
+    <div class='account-page__inner--left account-page__header'>
+      <h2>Create Account</h2>
+      <h5>新規アカウントの作成</h5>
+    </div>
+    <div class='account-page__inner--right user-form'>
+      <%= form_with model: resource, as: resource_name, url: registration_path(resource_name), local: true do |f|%>
+        <%= render "devise/shared/error_messages", resource: resource %>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :email ,"E-mail"%>
+          </div>
+          <div class='field-input'>
+            <%= f.email_field :email %>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :password, "パスワード"%>
+            <i>(英数字6文字以上)</i>
+          </div>
+          <div class='field-input'>
+            <%= f.password_field :password, autocomplete: "off"%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :password_confirmation, "確認用パスワード"%>
+          </div>
+          <div class='field-input'>
+            <%= f.password_field :password_confirmation, autocomplete: "off"%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :children_name, "お子さんのお名前"%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :children_name%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :guodian_name, "保護者様のお名前"%>
+          </div>
+          <div class='field-input'>
+            <%= f.text_field :guodian_name%>
+          </div>
+        </div>
+        <div class='field'>
+          <div class='field-label'>
+            <%= f.label :class_name_id, "所属クラス"%>
+          </div>
+          <div class='field-input'>
+            <%= f.collection_select(:class_name_id, ClassName.all, :id, :name, {}, {class:"class_name-select"})%>
+          </div>
+        </div>
+        <div class='actions'>
+          <%= f.submit "新規登録", class: 'btn'%>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

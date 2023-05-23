@@ -26,7 +26,14 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav">
-        <% if user_signed_in? %>
+        <% if admin_signed_in? %>
+          <div class="login-name me-5">
+            <%= current_admin.admin_name%>
+          </div>
+          <div class="logout-btn ">
+            <%= link_to "ログアウト",destroy_admin_session_path, method: :delete ,class:"text-decoration-none text-reset " %>
+          </div>
+        <% elsif user_signed_in? %>
           <div class="login-name me-5">
             <%= current_user.children_name %>
           </div>
