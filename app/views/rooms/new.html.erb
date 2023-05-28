@@ -1,0 +1,24 @@
+<div class="container bg-light mt-5" >
+  <div class="new-room  m-5 p-4">
+    <h1>新規チャットルームの作成</h1>
+    <%= form_with model: @room, local: true do |f|%>
+    <%= render 'shared/second__error_messages', model: f.object %> 
+      <div class="chat-name mb-3 mt-3 col-5">
+        <%= f.label :name, :チャットルーム名, class: 'form-label'%>
+        <%= f.text_field :name, class: 'form-control', placeholder: 'チャットルーム名を入力してください'%>
+      </div>
+      <div class="slect-user mb-3 mt-3 col-5">
+        <%= f.label :name, :チャットメンバーの選択, class: 'form-label'%>
+        <select name="room[user_id]">
+          <option value="">チャットするユーザーを選択してください</option>
+            <% User.all.each do |user| %>
+             <option value=<%= user.id %>><%= user.children_name %></option>
+            <% end %> 
+        <input name="room[admin_id]" type="hidden" value=<%= current_admin.id%>>
+      </div>
+      <div class="new-room-btn ">
+          <%=f.submit "送信", class:"btn btn-primary"%>
+        </div>
+    <% end %>
+  </div>
+</div>

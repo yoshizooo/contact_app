@@ -11,10 +11,10 @@
       <ul class="list-group list-group-flush" style="width: 100%;">
           <%= link_to "ホーム","#", class:"list-group-item "%>
           <%= link_to "連絡する","#", class:"list-group-item "%>
-          <%# adminのみ表示 %>
-          <%= link_to "お知らせ投稿","#", class:"list-group-item "%>
-          <%= link_to "ルームの作成","#", class:"list-group-item "%>
-          <%#//adminのみ表示 %>
+          <% if admin_signed_in? %>
+            <%= link_to "お知らせ投稿","#", class:"list-group-item "%>
+            <%= link_to "ルームの作成", new_room_path, class:"list-group-item "%>
+          <% end %>
         </ul>
       </ul>
     </div>

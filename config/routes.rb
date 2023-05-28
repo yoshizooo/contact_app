@@ -11,5 +11,6 @@ registrations: 'users/registrations'
 }
 
   root to: 'messages#index'
-  resources :messages
+  resources :messages, only: [:index, :create]
+  resources :rooms, only: [:new, :create]
 end

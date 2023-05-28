@@ -16,5 +16,7 @@ class User < ApplicationRecord
   extend ActiveHash::Associations::ActiveRecordExtensions
   belongs_to :class_name
   belongs_to :admin, optional: true
+  has_many :rooms
+  has_many :messages
   
 end
