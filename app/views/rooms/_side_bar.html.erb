@@ -1,10 +1,16 @@
 <div class="container-{breakpoint}">
-  <div class="side-bar bg-praimary" >
+  <div class="side-bar border border-3" >
     <div class="rooms">
       <div class="room p-4">
         <div class="rooms ps-2">
           <% if admin_signed_in? %>
             <% current_admin.rooms.each do |room|%>
+              <div class="room-name mb-3">
+                <%= link_to room.name,"#", class:"text-decoration-none text-reset fs-2"%>
+              </div>
+            <% end %>
+          <% elsif user_signed_in? %>
+            <% current_user.rooms.each do |room|%>
               <div class="room-name mb-3">
                 <%= link_to room.name,"#", class:"text-decoration-none text-reset fs-2"%>
               </div>
