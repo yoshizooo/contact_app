@@ -10,7 +10,7 @@ registrations: 'users/registrations'
   registrations: 'admins/registrations'
 }
 
-  root to: 'messages#index'
+  root to: 'rooms#index'
   resources :messages, only: [:index, :create]
   resources :rooms, only: [:new, :create]
 end
