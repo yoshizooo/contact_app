@@ -10,6 +10,6 @@ a {
   height: 100vh;
 }
 .main-chat {
-  width: calc(100vw - 20vw);
+  width: calc(100vw - 200px);
   height: 100vh;
 }

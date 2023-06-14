@@ -1,13 +1,12 @@
 
 .chat{
-  max-width: 80vw;
-  height: 600px;
+  max-width: 100vw;
+  height: 80vh;
   margin: 0 auto;
   overflow: scroll;
 }
 .message-field {
-  height: 100vh
-;
+  height: 100vh;
   overflow: scroll;
 }
 
