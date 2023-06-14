@@ -14,6 +14,7 @@
             </div><!-- right-message-icon -->
             <div class="message-text p-2 ms-2 mb-0 bg-warning">
               <%= message.admin_message.message.content%>
+              <%= image_tag message.admin_message.message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
             </div><!-- .right-message-text -->
           </div><!-- .right-message -->
           <div class="create-at message d-flex flex-row- align-items-start mb-1 ">
@@ -26,6 +27,7 @@
             </div><!-- .left-message-icon -->
             <div class="message-text p-2 me-2 mb-0 bg-info">
                 <%= message.user_message.message.content%>
+                <%= image_tag message.user_message.message.image.variant(resize: '250x250'), class: 'message-image' if message.image.attached? %>
             </div><!-- .left-message-text -->
           </div><!-- .left-message -->
           <div class="create-at message d-flex flex-row-reverse align-items-start mb-1">
