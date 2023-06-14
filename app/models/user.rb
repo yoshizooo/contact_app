@@ -18,5 +18,6 @@ class User < ApplicationRecord
   belongs_to :admin, optional: true
   has_many :rooms
   has_many :messages
+  has_many :user_messages
   
 end

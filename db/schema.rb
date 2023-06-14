@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_05_28_035831) do
+ActiveRecord::Schema.define(version: 2023_05_29_113422) do
+
+  create_table "admin_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "message_id", null: false
+    t.bigint "admin_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["admin_id"], name: "index_admin_messages_on_admin_id"
+    t.index ["message_id"], name: "index_admin_messages_on_message_id"
+  end
 
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "admin_name", null: false
@@ -31,13 +40,9 @@ ActiveRecord::Schema.define(version: 2023_05_28_035831) do
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "content"
     t.bigint "room_id", null: false
-    t.bigint "user_id", null: false
-    t.bigint "admin_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["admin_id"], name: "index_messages_on_admin_id"
     t.index ["room_id"], name: "index_messages_on_room_id"
-    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -48,6 +53,15 @@ ActiveRecord::Schema.define(version: 2023_05_28_035831) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["admin_id"], name: "index_rooms_on_admin_id"
     t.index ["user_id"], name: "index_rooms_on_user_id"
+  end
+
+  create_table "user_messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "message_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["message_id"], name: "index_user_messages_on_message_id"
+    t.index ["user_id"], name: "index_user_messages_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,10 +79,12 @@ ActiveRecord::Schema.define(version: 2023_05_28_035831) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "admin_messages", "admins"
+  add_foreign_key "admin_messages", "messages"
   add_foreign_key "admins", "users"
-  add_foreign_key "messages", "admins"
   add_foreign_key "messages", "rooms"
-  add_foreign_key "messages", "users"
   add_foreign_key "rooms", "admins"
   add_foreign_key "rooms", "users"
+  add_foreign_key "user_messages", "messages"
+  add_foreign_key "user_messages", "users"
 end

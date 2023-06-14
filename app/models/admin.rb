@@ -7,6 +7,7 @@ class Admin < ApplicationRecord
   has_many :users
   has_many :rooms
   has_many :messages
+  has_many :admin_messages
 
   
   

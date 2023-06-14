@@ -6,13 +6,13 @@
           <% if admin_signed_in? %>
             <% current_admin.rooms.each do |room|%>
               <div class="room-name mb-3">
-                <%= link_to room.name,"#", class:"text-decoration-none text-reset fs-2"%>
+                <%= link_to room.name,room_messages_path(room), class:"text-decoration-none text-reset fs-2"%>
               </div>
             <% end %>
           <% elsif user_signed_in? %>
             <% current_user.rooms.each do |room|%>
               <div class="room-name mb-3">
-                <%= link_to room.name,"#", class:"text-decoration-none text-reset fs-2"%>
+                <%= link_to room.name,room_messages_path(room), class:"text-decoration-none text-reset fs-2"%>
               </div>
             <% end %>
           <% end %>
