@@ -29,10 +29,10 @@ class MessagesController < ApplicationController
 
   private
   def message_form_admin_params
-    params.require(:message_form_admin).permit(:content).merge(admin_id: @admin, room_id: @room.id)
+    params.require(:message_form_admin).permit(:content, :image).merge(admin_id: @admin, room_id: @room.id)
   end
   def message_form_user_params
-    params.require(:message_form_user).permit(:content).merge(user_id: @user, room_id: @room.id)
+    params.require(:message_form_user).permit(:content, :image).merge(user_id: @user, room_id: @room.id)
   end
  
 end
