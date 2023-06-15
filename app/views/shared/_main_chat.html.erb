@@ -1,14 +1,22 @@
-<div class="container-{breakpoint} bg-light pt-4 pb-5" >
+<div class="container-{breakpoint} bg-light pt-2 pb-5" >
   <%# ----チャット画面-------- %>
   <% if admin_signed_in?%>
-    <%= @room.name %>
-     <%= link_to "チャットを終了する", room_path(@room), method: :delete %>
+  <div class="container">
+    <div class="d-flex">
+      <div class="btn btn-secondary  ms-2 mt-1">
+      <%= link_to "ルームを削除する", room_path(@room), method: :delete , class:"text-decoration-none text-reset"%>
+      </div>
+    </div>
+  </div>
   <% end %>
   <div class="chat border border-5 bg-light col-7 p-5 ">
     <div class="message-field">
       <% @message.each do |message|%>
         <% unless message.admin_message.nil? %>
-          <div class="message d-flex flex-row align-items-start mb-4">
+          <div class="create-at message d-flex flex-row- align-items-start mb-1 ">
+            <%= message.admin_message.admin.admin_name%>
+          </div>
+          <div class="message d-flex flex-row align-items-start mb-2">
             <div class="message-icon rounded-circle bg-primary text-white fs-2">
               <i class="fa-solid fa-school"></i>
             </div><!-- right-message-icon -->
@@ -21,7 +29,10 @@
             <%= l message.created_at %>
             </div>
         <% else message.user_message.nil? %>
-          <div class="message d-flex flex-row-reverse align-items-start mb-4">
+          <div class="message d-flex flex-row-reverse align-items-start me-2">
+           <%= message.user_message.user.children_name%>
+          </div>
+          <div class="message d-flex flex-row-reverse align-items-start mb-2">
             <div class="message-icon rounded-circle bg-secondary text-white fs-3">
               <i class="fas fa-user"></i>
             </div><!-- .left-message-icon -->
@@ -37,7 +48,7 @@
       <% end %>
     </div>
   </div>
-  <div class="message-input bg-primary col-7 mb-4">
+  <div class="message-input bg-primary col-7  mb-1">
    <% if admin_signed_in?%>
       <%= form_with model:[@room, @message_form_admin], url: room_messages_path, class:"form" , local: true do |f|%>
         <div class="form-input">

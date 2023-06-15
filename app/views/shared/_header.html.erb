@@ -9,7 +9,7 @@
       <!-- ドロップメニューの設定 -->
       <ul class="dropdown-menu">
       <ul class="list-group list-group-flush" style="width: 100%;">
-          <%= link_to "ホーム","#", class:"list-group-item "%>
+          <%= link_to "ホーム",rooms_path, class:"list-group-item "%>
           <%= link_to "連絡する","#", class:"list-group-item "%>
           <% if admin_signed_in? %>
             <%= link_to "お知らせ投稿","#", class:"list-group-item "%>
@@ -19,7 +19,9 @@
       </ul>
     </div>
     <div class="navbar-brand mb-0 ms-2 h1 fs-3 ">
+       <i class="fa-sharp fa-solid fa-cat"></i>
       池田保育園
+      <i class="fa-sharp fa-solid fa-cat"></i>
     </div>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
