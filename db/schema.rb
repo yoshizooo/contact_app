@@ -45,7 +45,6 @@ ActiveRecord::Schema.define(version: 2023_06_14_121712) do
   create_table "admins", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "admin_name", null: false
     t.integer "admin_number", null: false
-    t.bigint "user_id", null: false
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
@@ -55,7 +54,6 @@ ActiveRecord::Schema.define(version: 2023_06_14_121712) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["email"], name: "index_admins_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admins_on_reset_password_token", unique: true
-    t.index ["user_id"], name: "index_admins_on_user_id"
   end
 
   create_table "messages", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -103,7 +101,6 @@ ActiveRecord::Schema.define(version: 2023_06_14_121712) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "admin_messages", "admins"
   add_foreign_key "admin_messages", "messages"
-  add_foreign_key "admins", "users"
   add_foreign_key "messages", "rooms"
   add_foreign_key "rooms", "admins"
   add_foreign_key "rooms", "users"
