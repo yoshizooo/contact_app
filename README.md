@@ -18,7 +18,7 @@ PW:a123456
 
 # 利用方法
 ## 連絡をする
-【user】<br>
+### 【user】<br>
 ①新期登録<br>
 ヘッダー上部にある新期登録ボタンより新規登録を行なってください。<br>
      
@@ -28,7 +28,7 @@ PW:a123456
 ③チャットルームに遷移してメッセージを送信する<br>
 adminによって作成されたチャットルームに入室し、メッセージ欄よりメッセージ及び任意の写真１枚を送ることができます。<br>
 
-【admin】<br>
+### 【admin】<br>
 ①新期登録<br>
 ヘッダー上部にある新期登録ボタンをクリックし、新期登録画面へ遷移後、<br>
 urlを以下のurlに変更しadmin専用新期登録画面に遷移し登録を行なってください。<br>
@@ -54,8 +54,8 @@ urlを以下のurlに変更しadmin専用ログイン画面に遷移しログイ
 https://docs.google.com/spreadsheets/d/1zed4Vx7X_RuRULC10goob0AvJehEy7s2HdnJL34B1I8/edit?usp=sharing
 
 # 実装した機能についての画像やGIFおよびその説明※
- 【user】<br>
-   ①新期登録<br>
+### 【user】<br>
+①新期登録<br>
    [![Image from Gyazo](https://i.gyazo.com/bbc2958a26cd79789033e00ede7fd107.gif)](https://gyazo.com/bbc2958a26cd79789033e00ede7fd107)
    [![Image from Gyazo](https://i.gyazo.com/dd859d31c420e822ec072282867fc1fa.gif)](https://gyazo.com/dd859d31c420e822ec072282867fc1fa)
    ②ログイン<br>
@@ -65,8 +65,8 @@ https://docs.google.com/spreadsheets/d/1zed4Vx7X_RuRULC10goob0AvJehEy7s2HdnJL34B
    [![Image from Gyazo](https://i.gyazo.com/e5adca2b99d38f98e7ded347b94f7836.gif)](https://gyazo.com/e5adca2b99d38f98e7ded347b94f7836)
    [![Image from Gyazo](https://i.gyazo.com/1c37fcbb87d1c47e079c741ff04f457e.gif)](https://gyazo.com/1c37fcbb87d1c47e079c741ff04f457e)
 
-　【admin】<br>
-  　①新期登録<br>
+###【admin】<br>
+①新期登録<br>
    [![Image from Gyazo](https://i.gyazo.com/7744c09f577a9b4bcfd6c653fabce6dd.gif)](https://gyazo.com/7744c09f577a9b4bcfd6c653fabce6dd)
    [![Image from Gyazo](https://i.gyazo.com/a162113cb0b85d34d39c2f69167da205.gif)](https://gyazo.com/a162113cb0b85d34d39c2f69167da205)
    ②ログイン<br>
