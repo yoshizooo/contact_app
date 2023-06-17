@@ -1,15 +1,20 @@
-<div class="container-{breakpoint} bg-light pt-2 pb-5" >
+<div class="container-field bg-light pt-3 pb-4" >
   <%# ----チャット画面-------- %>
   <% if admin_signed_in?%>
-  <div class="container">
     <div class="d-flex">
       <div class="btn btn-secondary  ms-2 mt-1">
-      <%= link_to "ルームを削除する", room_path(@room), method: :delete , class:"text-decoration-none text-reset"%>
+      <%= link_to "ルームを削除する",  room_path(@room), method: :delete , class:"text-decoration-none text-reset"%>
       </div>
     </div>
-  </div>
   <% end %>
-  <div class="chat border border-5 bg-light col-7 p-5 ">
+  <% if user_signed_in?%>
+    <div class="d-flex">
+      <div class="btn btn-secondary  ms-2 mt-1">
+      <%= link_to "ホームに戻る", root_path, class:"text-decoration-none text-reset"%>
+      </div>
+    </div>
+  <% end %>
+  <div class="chat border border-5 bg-light col-7  ">
     <div class="message-field">
       <% @message.each do |message|%>
         <% unless message.admin_message.nil? %>
