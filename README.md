@@ -105,10 +105,10 @@ https://docs.google.com/spreadsheets/d/1zed4Vx7X_RuRULC10goob0AvJehEy7s2HdnJL34B
 - mysql
 
 # ローカルでの動作方法
-``` % git clone https://github.com/yoshizooo/contact_app.git ```
-``` % cd contact_app ```
-``` % bundle install ```
-``` % yarn install ```
+``` % git clone https://github.com/yoshizooo/contact_app.git ```<br>
+``` % cd contact_app ```<br>
+``` % bundle install ```<br>
+``` % yarn install ```<br>
 
 # 工夫したポイント
 アウトプットを兼ねて初めて一人で作成したアプリです。<br>
