@@ -65,7 +65,7 @@ https://docs.google.com/spreadsheets/d/1zed4Vx7X_RuRULC10goob0AvJehEy7s2HdnJL34B
    [![Image from Gyazo](https://i.gyazo.com/e5adca2b99d38f98e7ded347b94f7836.gif)](https://gyazo.com/e5adca2b99d38f98e7ded347b94f7836)
    [![Image from Gyazo](https://i.gyazo.com/1c37fcbb87d1c47e079c741ff04f457e.gif)](https://gyazo.com/1c37fcbb87d1c47e079c741ff04f457e)
 
-###【admin】<br>
+### 【admin】<br>
 ①新期登録<br>
    [![Image from Gyazo](https://i.gyazo.com/7744c09f577a9b4bcfd6c653fabce6dd.gif)](https://gyazo.com/7744c09f577a9b4bcfd6c653fabce6dd)
    [![Image from Gyazo](https://i.gyazo.com/a162113cb0b85d34d39c2f69167da205.gif)](https://gyazo.com/a162113cb0b85d34d39c2f69167da205)
