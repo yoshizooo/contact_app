@@ -9,12 +9,12 @@ https://contactapp-vmch.onrender.com
 
 # テスト用アカウント
 【user】
-Email:user@user1.co.jp
-PW:a123456
+Email:user@user1.co.jp<br>
+PW:a123456<br>
 
 【admin】
-Email:asmin2@test.co.jp
-PW:a123456
+Email:asmin2@test.co.jp<br>
+PW:a123456<br>
 
 # 利用方法
 ## 連絡をする
