@@ -5,6 +5,6 @@ FactoryBot.define do
     email                  { Faker::Internet.free_email }
     password              {Faker::Internet.password(min_length: 6)}
     password_confirmation {password}
-    class_name_id
+    class_name_id         { Faker::Number.between(from: 2, to: 4) }
   end
 end
