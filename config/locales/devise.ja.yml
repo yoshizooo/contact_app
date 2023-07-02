@@ -25,6 +25,9 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        class_name_id: 所属クラス
+        guodian_name: 保護者様のお名前
+        children_name: お子さんのお名前
     models:
       user: ユーザー
   devise:

@@ -24,19 +24,40 @@ RSpec.describe User, type: :model do
       it 'children_nameが空では登録できない' do
         @user.children_name = ''
         @user.valid?
-        binding.pry
+        expect(@user.errors.full_messages).to include("Children nameを入力してください")
       end
       it 'guodian_nameが空では登録できない' do
+        @user.guodian_name = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Guodian nameを入力してください")
       end
       it 'emailが空では登録できない' do
+        @user.email = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Eメールを入力してください")
       end
       it 'passwordが空では登録できない' do
+        @user.password = ''
+        @user.valid?
+        expect(@user.errors.full_messages).to include("パスワードを入力してください", "パスワード（確認用）とパスワードの入力が一致しません")
       end
       it 'passwordとpassword_confirmationが不一致では登録できない' do
+        @user.password = 'a12345'
+        @user.password_confirmation = 'b12345'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("パスワード（確認用）とパスワードの入力が一致しません")
       end
       it 'emailは@を含まないと登録できない' do
+        @user.email = 'testmail'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Eメールは不正な値です")
       end
       it 'passwordが5文字以下では登録できない' do
+        @user.password = 'a1234'
+        @user.password_confirmation = 'a1234'
+        @user.valid?
+        binding.pry
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
       it 'passwordが129文字以上では登録できない' do
       end
