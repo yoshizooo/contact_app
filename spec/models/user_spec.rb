@@ -24,12 +24,12 @@ RSpec.describe User, type: :model do
       it 'children_nameが空では登録できない' do
         @user.children_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Children nameを入力してください")
+        expect(@user.errors.full_messages).to include("お子さんのお名前を入力してください")
       end
       it 'guodian_nameが空では登録できない' do
         @user.guodian_name = ''
         @user.valid?
-        expect(@user.errors.full_messages).to include("Guodian nameを入力してください")
+        expect(@user.errors.full_messages).to include("保護者様のお名前を入力してください")
       end
       it 'emailが空では登録できない' do
         @user.email = ''
@@ -56,16 +56,30 @@ RSpec.describe User, type: :model do
         @user.password = 'a1234'
         @user.password_confirmation = 'a1234'
         @user.valid?
-        binding.pry
-        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
+        expect(@user.errors.full_messages).to include("パスワードは6文字以上で入力してください", "パスワードは不正な値です")
       end
       it 'passwordが129文字以上では登録できない' do
+        @user.password = Faker::Lorem.characters(number: 129, min_alpha: 1, min_numeric: 1)
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include("パスワードは128文字以内で入力してください")
       end
       it 'passwordは英語のみでは登録できない' do
+        @user.password = 'aaaaaa'
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include("パスワードは不正な値です")
       end
       it 'passwordは数字のみでは登録できない' do
+        @user.password = '123456'
+        @user.password_confirmation = @user.password
+        @user.valid?
+        expect(@user.errors.full_messages).to include("パスワードは不正な値です")
       end
       it 'クラス名にて---を選択すると登録できない' do
+        @user.class_name_id = 1
+        @user.valid?
+        expect(@user.errors.full_messages).to include("所属クラス選択してください")
       end
     end
   end
