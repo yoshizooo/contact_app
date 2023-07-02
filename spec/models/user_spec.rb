@@ -10,10 +10,21 @@ RSpec.describe User, type: :model do
       it 'class_name_idとguodian_name、children_name、passwordとpassword_confirmationが存在すれば登録できる' do
         expect(@user).to be_valid
       end
+      it 'emailにて@を含んでいれば登録できる' do
+        @user.email = Faker::Internet.free_email
+        expect(@user).to be_valid
+      end
+      it 'passwordとpassword_confirmationが6文字以上かつ英数字混合であれば登録できる' do
+        @user.password = Faker::Lorem.characters(number: 6, min_alpha: 1, min_numeric: 1)
+        @user.password_confirmation = @user.password
+        expect(@user).to be_valid
+      end
     end
     context '新規登録できないとき' do
       it 'children_nameが空では登録できない' do
-        
+        @user.children_name = ''
+        @user.valid?
+        binding.pry
       end
       it 'guodian_nameが空では登録できない' do
       end
